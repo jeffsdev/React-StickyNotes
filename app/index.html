@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple React ToDo List</title>
-  <!--build:css css/main.min.css-->
-  <link rel="stylesheet" href="css/main.css">
-  <!--endbuild-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple React ToDo List</title>
+    <!--build:css css/main.min.css-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--endbuild-->
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+  </head>
+  <body>
 
-    <div id="content"></div>
+      <div id="content"></div>
 
-    <script type="text/jsx">
+      <script type="text/babel">
 
-        var TestComponent = React.createClass({
-            render: function() {
-                return (
-                        <h2>Hello World!</h2>
-                );
-            }
-        });
+          var TestComponent = React.createClass({
+              render: function() {
+                  return (
+                          <h2>Hello World!!!!</h2>
+                  );
+              }
+          });
 
-        React.render(<TestComponent />, document.getElementById('content'));
+          ReactDOM.render(<TestComponent />, document.getElementById('content'));
 
-    </script>
+      </script>
 
-</body>
+  </body>
 </html>
