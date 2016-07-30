@@ -76,14 +76,38 @@
             };
           },
 
+          removeComment: function(i) {
+            console.log("removing comment: " + i);
+            // store comments array into variable
+            var arr = this.state.comments;
+            // splice out item passed in
+            arr.splice(i, 1);
+            // set new array equal to the updated array
+            this.setState({comments: arr});
+          },
+
+          updateComment: function(newText, i) {
+            console.log("updating comment: " + i);
+            // store comments array into variable
+            var arr = this.state.comments;
+            // get reference to that specific array item
+            arr[i] = newText;
+            // set equal to the new text that the user typed in
+            this.setState({comments: arr});
+          },
+
+          eachComment: function(item, i) {
+            return (
+              <Comment key={i} index={i}>
+                {item}
+              </Comment>
+            );
+          },
+
           render: function() {
             return (
               <div className="board">
-                {
-                  this.state.comments.map(function(item, i) {
-                    return (<Comment key={i}>{item}</Comment>);
-                  })
-                }
+                {this.state.comments.map(this.eachComment)}
               </div>
             );
           }
