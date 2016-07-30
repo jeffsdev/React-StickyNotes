@@ -1,0 +1,29 @@
+header {
+  padding: 25px 0;
+  .header-content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    width: 10%;
+    min-width: 100px;
+    max-width: 200px;
+    vertical-align: middle;
+    animation: rotate 20s linear infinite;
+  }
+  h1 {
+    font-size: 2em;
+    color: $blue-grey-light;
+    margin: 0;
+    @media screen and #{$tablet} {
+      font-size: 3em;
+    }
+  }
+}
+
+
+@keyframes rotate {
+  100% { transform:rotate(360deg); }
+}

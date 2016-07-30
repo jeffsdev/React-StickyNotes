@@ -9,19 +9,28 @@
     <!--build:css css/main.min.css-->
     <link rel="stylesheet" href="css/main.css">
     <!--endbuild-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!-- Minified React.js JavaScript -->
     <script src="js/react.min.js"></script>
     <script src="js/react-dom.min.js"></script>
     <script src="js/browser.min.js"></script>
   </head>
-  <body>
+  <body class="blue-grey lighten-5">
+
+      <header class="row blue-grey darken-4">
+        <div class="col s12 header-content">
+          <img src="img/logo.svg" alt="React logo">
+          <h1>Simple React.js To-Do List</h1>
+        </div>
+      </header>
 
       <div id="content"></div>
 
       <script type="text/babel">
 
-        var Comment = React.createClass({
+        var Task = React.createClass({
 
           // get initial state of form
           getInitialState: function() {
@@ -36,15 +45,15 @@
             this.props.deleteFromBoard(this.props.index);
           },
           save: function() {
-            this.props.updateCommentText(this.refs.newText.value, this.props.index)
+            this.props.updateTaskText(this.refs.newText.value, this.props.index)
             this.setState({editing: false});
           },
 
           // render different fields based on state
           renderNormal: function() {
             return (
-              <div className="commentContainer">
-                <div className="commentText">{this.props.children}</div>
+              <div className="taskContainer">
+                <div className="taskText">{this.props.children}</div>
                 <button onClick={this.edit} className="button-primary">Edit</button>
                 <button onClick={this.remove} className="button-danger">Remove</button>
               </div>
@@ -53,7 +62,7 @@
 
           renderForm: function() {
             return (
-              <div className="commentContainer">
+              <div className="taskContainer">
                 <textarea ref="newText" defaultValue={this.props.children}></textarea>
                 <button onClick={this.save} className="button-success">Save</button>
               </div>
@@ -75,41 +84,41 @@
 
           getInitialState: function() {
             return {
-              comments: ["CommentOne", "CommentTwo", "CommentThree"]
+              tasks: ["TaskOne", "TaskTwo", "TaskThree"]
             };
           },
 
           add: function(text) {
-            var arr = this.state.comments;
+            var arr = this.state.tasks;
             arr.unshift(text);
-            this.setState({comments: arr});
+            this.setState({tasks: arr});
           },
 
-          removeComment: function(i) {
-            console.log("removing comment: " + i);
-            // store comments array into variable
-            var arr = this.state.comments;
+          removeTask: function(i) {
+            console.log("removing task: " + i);
+            // store tasks array into variable
+            var arr = this.state.tasks;
             // splice out item passed in
             arr.splice(i, 1);
             // set new array equal to the updated array
-            this.setState({comments: arr});
+            this.setState({tasks: arr});
           },
 
-          updateComment: function(newText, i) {
-            console.log("updating comment: " + i);
-            // store comments array into variable
-            var arr = this.state.comments;
+          updateTask: function(newText, i) {
+            console.log("updating task: " + i);
+            // store tasks array into variable
+            var arr = this.state.tasks;
             // get reference to that specific array item
             arr[i] = newText;
             // set equal to the new text that the user typed in
-            this.setState({comments: arr});
+            this.setState({tasks: arr});
           },
 
-          eachComment: function(item, i) {
+          eachTask: function(item, i) {
             return (
-              <Comment key={i} index={i} updateCommentText={this.updateComment} deleteFromBoard={this.removeComment}>
+              <Task key={i} index={i} updateTaskText={this.updateTask} deleteFromBoard={this.removeTask}>
                 {item}
-              </Comment>
+              </Task>
             );
           },
 
@@ -118,7 +127,7 @@
               <div>
                 <button onClick={this.add.bind(null, "Default Text")} className="button-info create">Add New</button>
                 <div className="board">
-                  {this.state.comments.map(this.eachComment)}
+                  {this.state.tasks.map(this.eachTask)}
                 </div>
               </div>
             );
