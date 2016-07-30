@@ -19,24 +19,54 @@
 
         var Comment = React.createClass({
 
-          edit: function() {
-            alert('Editing comment');
-          },
-          remove: function() {
-            alert('Removing comment');
+          // get initial state of form
+          getInitialState: function() {
+            return {editing: false};
           },
 
-          render: function() {
+          // states for buttons
+          edit: function() {
+            this.setState({editing: true});
+          },
+          remove: function() {
+            console.log('Removing comment');
+          },
+          save: function() {
+            this.setState({editing: false});
+          },
+
+          // render different fields based on state
+          renderNormal: function() {
             return (
               <div className="commentContainer">
-                <div className="commentText">Text of whatever</div>
+                <div className="commentText">{this.props.children}</div>
                 <button onClick={this.edit} className="button-primary">Edit</button>
                 <button onClick={this.remove} className="button-danger">Remove</button>
               </div>
             );
+          },
+
+          renderForm: function() {
+            return (
+              <div className="commentContainer">
+                <textarea defaultValue={this.props.children}></textarea>
+                <button onClick={this.save} className="button-success">Save</button>
+              </div>
+            );
+          },
+
+          // if in editing mode, render form. if not in editing mode, render normal
+          render: function() {
+            if(this.state.editing) {
+              return this.renderForm();
+            } else {
+              return this.renderNormal();
+            }
           }
+
         });
 
+        // render to DOM
         ReactDOM.render(
           <div className="board">
             <Comment>Comment One!</Comment>
