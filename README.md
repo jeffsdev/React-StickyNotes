@@ -5,6 +5,8 @@
 ### Description
 ###### This is a simple Sticky-Note app built with React.js to learn the basics of React. The app features basic React.js functionality, including Components, Props, Event Handling, and States. Users can Add, Save, Edit/Update, and Remove notes.
 
+### View Live Demo
+#### [Visit app on gh-pages](http://jeffsdev.github.io/React-StickyNotes/)
 
 ### Dependencies
 Make sure these are installed first.
