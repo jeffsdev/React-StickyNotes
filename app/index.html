@@ -33,6 +33,7 @@
 
       <script type="text/babel">
 
+        // Individual Notes
         var Note = React.createClass({
 
           // get initial state of form
@@ -55,7 +56,6 @@
           // render different fields based on state
           renderNormal: function() {
             return (
-
               <div className="col s12 m6">
                 <div className="noteContainer card blue-grey darken-1">
                   <div className="noteText card-content white-text">
@@ -100,6 +100,7 @@
 
         });
 
+        // Container for the Notes
         var Board = React.createClass({
 
           getInitialState: function() {
@@ -109,8 +110,11 @@
           },
 
           add: function(text) {
+            // store notes array into variable
             var arr = this.state.notes;
+            // push new note into array
             arr.push(text);
+            // update array
             this.setState({notes: arr});
           },
 
