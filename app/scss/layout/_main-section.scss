@@ -1,6 +1,11 @@
+.app-description {
+  text-align: center;
+  p:first-child {
+    // font-weight: bold;
+  }
+}
 
-
-.taskContainer {
+.noteContainer {
   button {
     margin-right: 10px;
   }

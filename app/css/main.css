@@ -23,5 +23,8 @@ header {
   100% {
     transform: rotate(360deg); } }
 
-.taskContainer button {
+.app-description {
+  text-align: center; }
+
+.noteContainer button {
   margin-right: 10px; }
