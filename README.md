@@ -1,16 +1,15 @@
 # React.js Sticky-Notes
-#### Jeff Seymour
-##### July 2016
+#### Jeff Seymour | July 2016
 
 ### Description
-###### This is a simple Sticky-Note app built with React.js to learn the basics of React. The app features basic React.js functionality, including Components, Props, Event Handling, and States. Users can Add, Save, Edit/Update, and Remove notes.
+##### This is a simple Sticky-Note app built with React.js to learn the basics of React. The app features basic React.js functionality, including Components, Props, Event Handling, and States. Users can Add, Save, Edit/Update, and Remove notes.
 
-### [View Live Demo](http://jeffsdev.github.io/React-StickyNotes/)
+### [View Live Demo](http://jeffsdev.github.io/React-StickyNotes/app)
 
 ---
 
 ### Technologies Used
-##### HTML5, SCSS, Materialize.css, React.js 
+##### HTML5, SCSS, Materialize.css, React.js
 
 ### Dependencies
 Make sure these are installed first.
