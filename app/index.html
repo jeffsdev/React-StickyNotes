@@ -75,6 +75,12 @@
             };
           },
 
+          add: function(text) {
+            var arr = this.state.comments;
+            arr.unshift(text);
+            this.setState({comments: arr});
+          },
+
           removeComment: function(i) {
             console.log("removing comment: " + i);
             // store comments array into variable
@@ -105,8 +111,11 @@
 
           render: function() {
             return (
-              <div className="board">
-                {this.state.comments.map(this.eachComment)}
+              <div>
+                <button onClick={this.add.bind(null, "Default Text")} className="button-info create">Add New</button>
+                <div className="board">
+                  {this.state.comments.map(this.eachComment)}
+                </div>
               </div>
             );
           }
