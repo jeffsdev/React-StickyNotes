@@ -22,3 +22,6 @@ header {
 @keyframes rotate {
   100% {
     transform: rotate(360deg); } }
+
+.taskContainer button {
+  margin-right: 10px; }
