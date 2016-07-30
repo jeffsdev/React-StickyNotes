@@ -17,15 +17,33 @@
 
       <script type="text/babel">
 
-          var TestComponent = React.createClass({
-              render: function() {
-                  return (
-                          <h2>Hello World!!!!</h2>
-                  );
-              }
-          });
+        var Comment = React.createClass({
 
-          ReactDOM.render(<TestComponent />, document.getElementById('content'));
+          edit: function() {
+            alert('Editing comment');
+          },
+          remove: function() {
+            alert('Removing comment');
+          },
+
+          render: function() {
+            return (
+              <div className="commentContainer">
+                <div className="commentText">Text of whatever</div>
+                <button onClick={this.edit} className="button-primary">Edit</button>
+                <button onClick={this.remove} className="button-danger">Remove</button>
+              </div>
+            );
+          }
+        });
+
+        ReactDOM.render(
+          <div className="board">
+            <Comment>Comment One!</Comment>
+            <Comment>Comment Two!</Comment>
+            <Comment>Comment Three!</Comment>
+          </div>
+          , document.getElementById('content'));
 
       </script>
 
