@@ -1,8 +1,14 @@
 .app-description {
   text-align: center;
   p:first-child {
-    // font-weight: bold;
+    font-weight: bold;
   }
+}
+
+.new-note-btn {
+  margin: auto;
+  display: block;
+  margin-bottom: 50px;
 }
 
 .noteContainer {

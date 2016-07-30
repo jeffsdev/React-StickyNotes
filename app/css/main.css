@@ -25,6 +25,13 @@ header {
 
 .app-description {
   text-align: center; }
+  .app-description p:first-child {
+    font-weight: bold; }
+
+.new-note-btn {
+  margin: auto;
+  display: block;
+  margin-bottom: 50px; }
 
 .noteContainer button {
   margin-right: 10px; }
