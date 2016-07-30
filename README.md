@@ -7,7 +7,10 @@
 
 ### [View Live Demo](http://jeffsdev.github.io/React-StickyNotes/)
 
---- 
+---
+
+### Technologies Used
+##### HTML5, SCSS, Materialize.css, React.js 
 
 ### Dependencies
 Make sure these are installed first.
